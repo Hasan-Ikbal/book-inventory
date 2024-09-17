@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Inventory</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Book Inventory Management</h1>
+
+    <!-- Add Book Form -->
+    <form id="add-book-form" action="/add-book" method="POST">
+      <input type="text" name="title" placeholder="Title" required>
+      <input type="text" name="author" placeholder="Author" required>
+      <input type="text" name="genre" placeholder="Genre" required>
+      <input type="date" name="publication_date" required>
+      <input type="text" name="isbn" placeholder="ISBN" required>
+      <button type="submit">Add Book</button>
+    </form>
+    
+
+    <!-- Filter Form -->
+    <div class="filter-section">
+      <h2>Filter Books</h2>
+      <input type="text" id="filter-title" placeholder="Filter by Title">
+      <input type="text" id="filter-author" placeholder="Filter by Author">
+      <input type="text" id="filter-genre" placeholder="Filter by Genre">
+      <button onclick="filterBooks()">Filter</button>
+    </div>
+
+    <!-- Display Books -->
+    <h2>Book List</h2>
+    <table id="book-table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Genre</th>
+          <th>Publication Date</th>
+          <th>ISBN</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <!-- Export Data -->
+    <button onclick="exportData('json')">Export as JSON</button>
+    <button onclick="exportData('csv')">Export as CSV</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
